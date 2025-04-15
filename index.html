@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Toko</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div id="custom-alert" class="alert"></div>
+
+    <!-- Form Login -->
+    <div id="login-form" class="container">
+        <h2>Login Admin <br> Toko H Endun</h2>
+        <input type="email" id="email" placeholder="Email" />
+        <input type="password" id="password" placeholder="Password" />
+        <button id="login-btn">Login</button>
+        <button id="google-login-btn">Login dengan Google</button>
+        <p>Belum punya akun? <a href="#" id="show-signup">Daftar</a></p>
+    </div>
+
+    <!-- Form Daftar -->
+    <div id="signup-form" class="container" style="display: none;">
+        <h2>Daftar <br> Akun Baru</h2>
+        <!-- Form Pendaftaran -->
+        <input type="email" id="signup-email" placeholder="Email" required />
+        <input type="password" id="signup-password" placeholder="Password" required />
+        <button id="signup-btn">Daftar</button>
+        <!-- Input Kode Verifikasi -->
+        <div id="verification-code-input" style="display:none;">
+            <input type="text" id="verification-code" placeholder="Masukkan kode verifikasi" required />
+            <button id="verify-code-btn" style="display:none;">Verifikasi</button>
+        </div>
+        <p>Sudah punya akun? <br> <a href="#" id="show-login">Kembali ke Login</a></p>
+    </div>
+
+    <!-- Dashboard -->
+    <div id="dashboard-container" class="container">
+        <button id="logout-btn" class="logout-btn">Logout</button>
+        <div class="foto-wrapper">
+            <img id="user-photo" class="user-photo" src="" alt="Foto User" />
+        </div>  
+        <h2>Dashboard</h2>
+        <p>Selamat datang, <span id="user-email"></span>!</p>
+
+        <div id="form-barang">
+            <input type="text" id="namaBarang" placeholder="Nama Barang" />
+            <input type="number" id="hargaBarang" placeholder="Harga (Rp)" />
+            <button id="btnTambah">Tambah Barang</button>
+        </div>
+        <div id ="cari-barang">
+            <input type="text" id="searchBarang" placeholder="Cari Barang" oninput="loadBarang()" />
+        </div>
+        
+        <div id="barangContainer">
+            <div style="overflow-y: auto; max-height: 300px;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Nama Barang</th>
+                            <th>Harga</th>
+                            <th>Terakhir Diedit</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="barangList"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notifikasi perubahan harga -->
+    <div id="price-diff-container" class="price-diff">
+        <span class="close-price-diff">✕</span> <!-- Tombol close -->
+        <h3>Perubahan Harga</h3>
+        <p><strong>Nama Barang:</strong> <span id="diff-nama"></span></p>
+        <p><strong>Harga Lama:</strong> Rp <span id="harga-lama">-</span></p>
+        <p><strong>Harga Baru:</strong> Rp <span id="harga-baru">-</span></p>
+        <p><strong>Selisih:</strong> Rp <span id="selisih-harga">-</span></p>
+    </div>
+    <script type="module" src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,187 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+    flex-direction: column;
+    overflow: auto;
+}
+
+.container {
+    background: white;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+    display: none;
+    position: relative;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 5px;
+    text-align: center;
+}
+
+th {
+    background-color: #28a745;
+    color: white;
+}
+
+input {
+    display: flex;
+    width: 90%;
+    margin: 5px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+.logout-btn {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #28a745;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.logout-btn:hover {
+    background-color: #c82333;
+}
+
+
+#barangContainer {
+    max-height: 300px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    position: relative;
+}
+
+#barangContainer table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#barangContainer thead {
+    position: sticky;
+    top: 0;
+    background-color: #28a745;
+    color: white;
+    z-index: 10;
+}
+
+#form-barang {
+    width: 100%;
+    max-width: 350px;
+    margin: 1px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#form-barang input,
+#form-barang button {
+    margin-bottom: 1px auto;
+    margin-top: 1px auto;
+}
+
+#cari-barang{
+    width: 100%;
+    max-width: 350px;
+    margin: 5px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.alert {
+    position: fixed;
+    top: 20px;
+    right: -300px;
+    background-color: #28a745;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: right 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    opacity: 0;
+}
+
+.alert.show {
+    right: 20px;
+    opacity: 1;
+}
+
+.alert.error {
+    background-color: #dc3545;
+}
+
+.alert.warning {
+    background-color: #ffc107;
+}
+
+.price-diff {
+    position: fixed;
+    right: 20px;
+    top: 100px;
+    width: 250px;
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: none;
+}
+.close-price-diff {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 18px;
+    color: #999;
+}
+
+.close-price-diff:hover {
+    color: #dc3545;
+}
+
+.foto-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+/* Gaya untuk gambar profil */
+.user-photo {
+    width: 60px;  /* Ukuran lebar gambar */
+    height: 60px; /* Ukuran tinggi gambar */
+    border-radius: 50%; /* Membuat gambar berbentuk lingkaran */
+    object-fit: cover; /* Menyesuaikan gambar agar tidak terdistorsi */
+}
+
